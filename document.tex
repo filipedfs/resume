@@ -1,0 +1,450 @@
+% !TeX root = ./document.tex
+
+\documentclass[10pt,a4paper]{article}
+
+\usepackage{fontspec}
+\setmainfont{Lato}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+\usepackage[left=0.00cm,
+			right=0.00cm, 
+			top=0.00cm, 
+			bottom=0.00cm,
+			]{geometry}
+
+\usepackage{xcolor}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{verbatim}
+
+\definecolor{sidebar-color}{rgb}{0.25,0.25,0.25}
+\definecolor{secondary-color}{rgb}{0.063,0.631,0.523}
+
+\setlength{\parindent}{0pt}
+\setlength{\fboxsep}{2em}
+\setlength{\fboxrule}{1pt} 
+\setlength{\topskip}{0pt}
+
+\newcommand{\englishversion}[1]{#1}
+
+\newcommand{\portugueseversion}[1]{#1}
+
+\newcommand{\myphoto}{
+	\begin{minipage}[t][2cm]{\linewidth}
+		\centering
+		\begin{tikzpicture}[remember picture,overlay]
+			\clip (0,0) circle (2cm) node {\includegraphics[width=0.5\linewidth]{img/filipe.png}};
+		\end{tikzpicture}
+	\end{minipage}
+}
+
+\newcommand{\myname}[2]{%
+	{%
+		\huge%
+		\setlength{\parskip}{0.5em}%
+		\textls[150]{\MakeUppercase{#1}}\par%
+		\vspace{-0.25em}%
+		\textls[150]{\MakeUppercase{#2}}%
+	}%
+}
+
+\newcommand{\profession}[1]{
+	{
+		\large
+		\setlength{\fboxrule}{1.5pt}
+		\setlength{\fboxsep}{0.4em}
+		\fcolorbox{secondary-color}{sidebar-color}{%
+			\textls[150]{
+				\hspace{2em}\MakeUppercase{#1}\hspace{2em}
+			}
+		}
+	}
+}
+
+\newcommand{\sidebarsectiontitle}[1]{
+	{\large\MakeUppercase{#1}}	
+	
+	\vspace{-0.5em}
+
+	{\color{secondary-color}\rule{0.5\textwidth}{2pt}}
+}
+
+\newcommand{\sectiondivider}{\vspace{3.em}}
+
+\newcommand{\sectiontitle}[1]{
+	{		
+		\centering
+		\normalsize
+		\textls[150]{\MakeUppercase{#1}}\par
+		\rule{\linewidth}{1.5pt}
+	}
+}
+
+\newcommand{\cvitem}[3]{
+	\vspace{-1em}
+	\begin{flushleft}		
+		\begin{onehalfspace}
+			\MakeUppercase{#1}\par
+			{\color{secondary-color}#2}\par
+			#3
+		\end{onehalfspace}
+	\end{flushleft}
+	\vspace{-1em}
+}
+
+\begin{document}
+\englishversion{%
+	\colorbox{sidebar-color}{
+		\color{white}
+		\mbox{}
+		\begin{minipage}[t][\paperheight-2\fboxsep][t]{0.35\textwidth-2\fboxsep-2\fboxrule}
+			\mbox{}
+			\vspace{2em}
+
+			\begin{center}
+				\myphoto
+
+				\myname{Filipe}{Fonseca}
+
+				\vspace{3em}
+
+				\profession{Musician}
+
+				\vspace{3em}
+
+				{
+					\sidebarsectiontitle{About Me}
+
+					{
+						\footnotesize
+						\begin{onehalfspace}
+							\setlength{\parskip}{1em}
+							\textls[150]{%
+								Choir and orchestra conductor, currently working as conductor of the FEA Choir, a group that I was invited to start by the college dean.}
+
+							\textls[150]{%
+								I worked at USP Chamber Orchestra for 3 years, 2 as an assistant conductor, where I had contact with several musicians from classical and popular music areas.}
+
+							\textls[150]{%
+								Since my graduation I have academic relations with Comunicantus: Choral Laboratory where I'm currently working in a project helping to define processes within the laboratory as well as create content and manage social media.}
+						\end{onehalfspace}
+					}
+				}
+
+				\vspace{2em}
+
+				{
+					\sidebarsectiontitle{Contact Me}
+
+					{
+						\mbox{}
+
+						\textls[150]{+55 11 98559-4060}
+
+						\vspace{0.5em}
+
+						\textls[150]{filipedfs@gmail.com}
+					}
+				}
+
+				\vspace{2em}
+
+				{
+					\sidebarsectiontitle{Languages}
+
+					{
+						\vspace{0.5em}
+
+						\large
+
+						\textls[150]{Portuguese}
+
+						\vspace{0.5em}
+
+						\textls[150]{English}
+
+						\vspace{0.5em}
+					}
+				}
+
+				\vspace{2em}
+
+				{
+					\sidebarsectiontitle{My Skills}
+
+					{
+						\mbox{}
+
+						\textls[150]{MUSIC CONDUCTING}
+
+						\mbox{}
+
+						\textls[150]{MUSIC PRODUCTION}
+
+						\mbox{}
+
+						\textls[150]{MUSIC EDITING}
+
+						\mbox{}
+
+						\textls[150]{ADMINISTRATION}
+
+						\mbox{}
+
+						\textls[150]{PROGRAMMING}
+					}
+				}
+			\end{center}
+		\end{minipage}%
+	}%
+	\begin{minipage}[t][\paperheight-2\fboxsep-2\fboxrule][t]{0.65\textwidth}%
+		\vspace{1.5em}
+		\centering
+		\parbox[c]{0.85\textwidth}{
+			\small
+
+			\sectiontitle{Work Experience}
+
+			\cvitem{Content Manager @ Comunicantus (Scholarship)}{February 2019 -- Present}{
+				Content creation, social media management, development and maintenance of the website.
+			}
+
+			\cvitem{Choir Conductor @ FEA Choir}{October 2018 -- Present}{
+				Conduct, rehearse, program music to perform and produce concerts.
+			}
+
+			\cvitem{Assistant conductor @ USP Chamber Orchestra}{February 2016 -- June 2018}{
+				Assist main conductor, help artistic director with programming, coordinate information with press office, review programm notes and advertisement, conduct.
+			}
+
+			\cvitem{Archivist @ USP Chamber Orchestra}{February 2015 -- January 2016}{
+				Prepare material for rehearsals and study, contact publishers to rent score and parts, take care of and keep orchestra files organized.
+			}
+
+			\cvitem{Monitor @ Comunicantus: Choral Laboratory (ECA/USP)}{February 2009 -- December 2014}{}
+
+			\cvitem{Teacher and Conductor @ Projeto Guri}{August 2006 -- December 2009}{}
+
+			\sectiondivider
+
+			\sectiontitle{Education}
+
+			\cvitem{Bachelor of Administration}{January 2017 -- Present}{University of São Paulo | School of Economics, Business and Accounting}
+
+			\cvitem{Master of Music}{February 2016 -- November 2018}{University of São Paulo | College of Communication and Arts}
+
+			\cvitem{Bachelor of Music in Conducting}{January 2008 -- December 2015}{University of São Paulo | College of Communication and Arts}
+
+			\sectiondivider
+
+			\sectiontitle{Interests}
+
+			\centering
+			\parbox{0.2\textwidth}{%
+				\centering
+				\includegraphics[width=0.1\textwidth]{img/music-icon.png}\par
+				\centering
+				Music
+			}%
+			\parbox{0.2\textwidth}{%
+				\centering
+				\includegraphics[width=0.1\textwidth]{img/camera-icon.png}\par
+				\centering
+				Photography
+			}%
+			\parbox{0.2\textwidth}{%
+				\centering
+				\includegraphics[width=0.1\textwidth]{img/console-icon.png}\par
+				\centering
+				Programming
+			}%
+			\parbox{0.2\textwidth}{%
+				\centering
+				\includegraphics[width=0.1\textwidth]{img/administration-icon.png}\par
+				\centering
+				Entrepreneurship
+			}
+		}
+	\end{minipage}%
+}
+
+\newpage
+
+\portugueseversion{%
+	\colorbox{sidebar-color}{
+		\color{white}
+		\mbox{}
+		\begin{minipage}[t][\paperheight-2\fboxsep][t]{0.35\textwidth-2\fboxsep-2\fboxrule}
+			\mbox{}
+			\vspace{2em}
+
+			\begin{center}
+				\myphoto
+
+				\myname{Filipe}{Fonseca}
+
+				\vspace{3em}
+
+				\profession{Músico}
+
+				\vspace{3em}
+
+				{
+					\sidebarsectiontitle{Sobre Mim}
+
+					{
+						\footnotesize
+						\begin{onehalfspace}
+							\setlength{\parskip}{1em}
+							\textls[150]{Regente de coro e orquestra, atualmente trabalho no Coral da FEA, grupo que fui convidado a iniciar pelo diretor da escola.}
+
+							\textls[150]{Trabalhei na Orquestra de Câmara da ECA/USP por 3 anos, sendo 2 como regente assistente, onde tive contato com vários músicos tanto da área erudita quanto popular.}
+
+							\textls[150]{Desde a graduação tenho relações acadêmicas com o Comunicantus: Laboratório Coral onde participo de um projeto ajudando a definir processos dentro do laboratório assim como produzindo conteúdo e gerenciando as mídias sociais.}
+						\end{onehalfspace}
+					}
+				}
+
+				\vspace{2em}
+
+				{
+					\sidebarsectiontitle{Contact Me}
+
+					{
+						\mbox{}
+
+						\textls[150]{+55 11 98559-4060}
+
+						\vspace{0.5em}
+
+						\textls[150]{filipedfs@gmail.com}
+					}
+				}
+
+				\vspace{2em}
+
+				{
+					\sidebarsectiontitle{Idiomas}
+
+					{
+						\vspace{0.5em}
+
+						\large
+
+						\textls[150]{Português}
+
+						\vspace{0.5em}
+
+						\textls[150]{Inglês}
+
+						\vspace{0.5em}
+					}
+				}
+
+				\vspace{2em}
+
+				{
+					\sidebarsectiontitle{Habilidades}
+
+					{
+						\mbox{}
+
+						\textls[150]{REGÊNCIA}
+
+						\mbox{}
+
+						\textls[150]{PRODUÇÃO MUSICAL}
+
+						\mbox{}
+
+						\textls[150]{EDIÇÃO MUSICAL}
+
+						\mbox{}
+
+						\textls[150]{ADMINISTRAÇÃO}
+
+						\mbox{}
+
+						\textls[150]{PROGRAMAÇÃO}
+					}
+				}
+			\end{center}
+		\end{minipage}%
+	}%
+	\begin{minipage}[t][\paperheight-2\fboxsep-2\fboxrule][t]{0.65\textwidth}%
+		\vspace{1.5em}
+		\centering
+		\parbox[c]{0.85\textwidth}{
+			\small
+
+			\sectiontitle{EXPERIÊNCIA PROFISSIONAL}
+
+			\cvitem{Gerenciador de Conteúdo @ Comunicantus (Bolsa)}{Fevereiro de 2019 -- Atual}{
+				Criação de conteúdo, gerenciamento das mídias sociais, desenvolvimento e manutenção do website.
+			}
+
+			\cvitem{Regente Coral @ Coral da FEA}{Outubro de 2018 -- Atual}{
+				Reger, ensaiar, escolher repertório e produzir concertos.
+			}
+
+			\cvitem{Regente assistente @ Orquestra de Câmara da ECA/USP}{Fevereiro de 2016 -- Junho de 2018}{
+				Dar assistência ao maestro, ajudar o diretor artístico com a programação, coordenar a informação com assessoria de imprensa, revisar notas de programa e divulgação, reger.
+			}
+
+			\cvitem{Arquivista @ Orquestra de Câmara da ECA/USP}{Fevereiro de 2015 -- Janeiro de 2016}{
+				Preparar material para os ensaios e estudo, contatar editoras para aluguel de partituras, cuidar e manter organizado os arquivos.
+			}
+
+			\cvitem{Monitor @ Comunicantus: Laboratório Coral (ECA/USP)}{Fevereiro de 2009 -- Dezembro de 2014}{}
+
+			\cvitem{Professor e Regente @ Projeto Guri}{Agosto de 2006 -- Dezembro de 2009}{}
+
+			\sectiondivider
+
+			\sectiontitle{FORMAÇÃO ACADÊMICA}
+
+			\cvitem{Bacharelado em Administração}{Janeiro de 2017 -- Atual}{Universidade de São Paulo | Faculdade de Economia, Administração e Contabilidade}
+
+			\cvitem{Mestrado em Música}{Fevereiro de 2016 -- Novembro de 2018}{Universidade de São Paulo | Escola de Comunicações e Artes}
+
+			\cvitem{Bacharelado em Música (Regência)}{Janeiro de 2008 -- Dezembro de 2015}{Universidade de São Paulo | Escola de Comunicações e Artes}
+
+			\sectiondivider
+
+			\sectiontitle{INTERESSES}
+
+			\centering
+			\parbox{0.2\textwidth}{%
+				\centering
+				\includegraphics[width=0.1\textwidth]{img/music-icon.png}\par
+				\centering
+				Música
+			}%
+			\parbox{0.2\textwidth}{%
+				\centering
+				\includegraphics[width=0.1\textwidth]{img/camera-icon.png}\par
+				\centering
+				Fotografia
+			}%
+			\parbox{0.2\textwidth}{%
+				\centering
+				\includegraphics[width=0.1\textwidth]{img/console-icon.png}\par
+				\centering
+				Programação
+			}%
+			\parbox{0.2\textwidth}{%
+				\centering
+				\includegraphics[width=0.1\textwidth]{img/administration-icon.png}\par
+				\centering
+				Empreendedorismo
+			}
+		}
+	\end{minipage}%
+}
+\end{document}

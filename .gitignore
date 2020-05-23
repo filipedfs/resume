@@ -1,0 +1,10 @@
+document.pdf
+document.synctex.gz
+document.synctex(busy)
+document.aux
+document.fdb_latexmk
+document.fls
+document.log
+__latexindent_temp.tex
+indent.log
+_aux/
